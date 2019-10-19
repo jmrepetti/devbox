@@ -15,14 +15,13 @@ end
 
 
 Vagrant.configure("2") do |config|
-  # config.vm.box = "base"
+
   config.vm.box = "ubuntu/xenial64"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1536"]
   end
 
-  # Forward the Rails server default port to the host
   config.vm.hostname = 'localhost'
 
   config.vm.network :forwarded_port, guest: 3000, host: 3030
@@ -34,6 +33,7 @@ Vagrant.configure("2") do |config|
 
     chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
 
+    # This was required but depends on each user if they already accepted this license
     chef.arguments = "--chef-license accept"
 
     chef.add_recipe 'common'

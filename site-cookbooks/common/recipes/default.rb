@@ -1,7 +1,5 @@
 version = '2.5.0'
 
-# include_recipe 'rbenv'
-
 rbenv_user_install 'vagrant'
 
 rbenv_plugin 'ruby-build' do

@@ -36,11 +36,7 @@ Vagrant.configure("2") do |config|
 
     chef.arguments = "--chef-license accept"
 
-    # chef.add_recipe 'ruby_build'
     chef.add_recipe 'common'
-  #   # chef.add_recipe 'ruby_rbenv::user_install'
-  #   # chef.add_recipe 'ruby_rbenv::user'
-  #   # chef.add_recipe 'ruby_rbenv::system_install'
 
   end
 
